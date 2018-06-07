@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for doctor in object_list %}
+        <a href="{% url 'doctors_qr' doctor.id %}"><button class="btn btn-primary">{{ doctor }}</button></a>
+    {% endfor %}
+
+{% endblock %}

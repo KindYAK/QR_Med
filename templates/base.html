@@ -1,0 +1,58 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>QR Med - Не Навреди</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/sticky-footer-navbar.css" %}" rel="stylesheet">
+    {% block header %} {% endblock %}
+</head>
+
+<body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">QR Med</a>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'doctors_list' %}">Список врачей</a>
+            </li>
+              {% block breadcrump %}
+              {% endblock %}
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="container">
+        {% block content %}
+            Hello, world
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+          {% block footer %}
+            <span class="text-muted">Sagrad JSC 2018</span>
+          {% endblock %}
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static "js/jquery-3.js" %}"></script>
+    <script src="{% static "js/popper.js" %}"></script>
+    <script src="{% static "js/bootstrap.js" %}"></script>
+</body>
+</html>
